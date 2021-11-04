@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+    - image: elmariofredo/java-in-k8s
+      jib:
+        args: ["-DSkipTests"]
+deploy:
+  kubectl:
+    manifests:
+      - k8s/*
