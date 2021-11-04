@@ -1,12 +1,11 @@
-FROM openjdk
-# 11.0.13-oraclelinux8
+FROM openjdk:11.0.13-oraclelinux8
 
-# USER nobody:nobody
+USER nobody:nobody
 
-# WORKDIR /app
+WORKDIR /app
 
-# ENV JAVA_OPTS "-XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics"
+ENV JAVA_OPTS "-XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics"
 
-# ENTRYPOINT [ "java", "-jar", "/app/spring-boot-initial-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java", "-jar", "/app/spring-boot-initial-0.0.1-SNAPSHOT.jar" ]
 
-# COPY target/spring-boot-initial-0.0.1-SNAPSHOT.jar /app
+COPY target/spring-boot-initial-0.0.1-SNAPSHOT.jar /app
