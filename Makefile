@@ -11,6 +11,7 @@ jib:
 		-e MAVEN_OPTS="-Dmaven.repo.local=/app/.m2/repository" \
 		-w /app \
 		-v ${PWD}:/app \
+		-v ${HOME}/.docker:/root/.docker \
 		openjdk:11.0.13-oraclelinux8 \
 		./mvnw compile jib:build -Dimage=elmariofredo/java-in-k8s
 
